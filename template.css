@@ -2,18 +2,9 @@
 /* Global settings. */
 
 html {
-  body {
-    
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-
-    grid-template-areas: 
-    "navbar"
-    "main-area";
-}g: border-box;
+    box-sizing: border-box;
 }
+
 
 *, *::before, *::after {
     box-sizing: inherit;
