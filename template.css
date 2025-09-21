@@ -1,0 +1,94 @@
+
+/* Global settings. */
+
+html {
+  body {
+    
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    grid-template-areas: 
+    "navbar"
+    "main-area";
+}g: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0, 20%;
+    color: white;
+    background-color: black;
+}
+
+li a {
+    text-decoration: none;
+}
+
+
+a::before {
+    color: white;
+}
+
+a, a:active, a:visited{
+    color: white;
+}
+
+
+
+/* Layout settings. */
+
+body {
+    
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    grid-template-areas: 
+    "navbar"
+    "main-area";
+}
+
+#navbar, #main-area {
+    border-style: solid;
+}
+
+#navbar {
+    grid-area: navbar;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#main-area {
+    grid-area: main-area;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#navbar-ul li{
+    display: inline;
+}
