@@ -3,6 +3,8 @@
 
 html {
     box-sizing: border-box;
+    font-size: 100%;
+    line-height: 1.5;
 }
 
 
@@ -10,8 +12,15 @@ html {
     box-sizing: inherit;
 }
 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    margin: 0, 20%;
+    margin: 0 10%;
+    font-family: "Poppins", sans-serif;
     color: white;
     background-color: black;
 }
@@ -55,6 +64,20 @@ body {
     display: flex;
     justify-content: center;
 }
+
+#navbar-ul {
+    margin: 1em 0;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar a {
+    padding: 0 2rem;
+    white-space: nowrap;
+}
+
 
 #main-area {
     grid-area: main-area;
