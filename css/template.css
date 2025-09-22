@@ -129,9 +129,18 @@ body {
     max-width: 800px;
 }
 
+#text-div p {
+    padding-top: 1rem;
+}
+
 #navbar-ul li{
     display: inline;
 }
+
+#customer-title {
+    padding-bottom: 1rem;
+}
+
 
 
 
