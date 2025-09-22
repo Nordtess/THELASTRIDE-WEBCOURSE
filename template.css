@@ -36,6 +36,7 @@ a::before {
 
 a, a:active, a:visited{
     color: white;
+    transition: all 0.3s ease;
 }
 
 
@@ -81,6 +82,14 @@ body {
 #navbar a {
     padding: 0 2rem;
     white-space: nowrap;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#navbar a:hover, #navbar a:focus {
+    transform: scale(1.3);
+    color: white;
+    animation: pulsing-glow 1s linear infinite alternate;
 }
 
 #main-area {
@@ -115,6 +124,16 @@ body {
 }
 
 
+@keyframes pulsing-glow {
+	0% {
+		text-shadow: 0 0 5px #88aaff, 0 0 10px #88aaff;
+	}
+	100% {
+		text-shadow: 0 0 20px #88aaff, 0 0 30px #88aaff, 0 0 40px #88aaff;
+	}
+}
+
+
 
 
 
@@ -134,5 +153,9 @@ body {
 
     #text-div {
         font-size: 0.9rem;
+    }
+
+    #navbar {
+        display: none;
     }
 }
