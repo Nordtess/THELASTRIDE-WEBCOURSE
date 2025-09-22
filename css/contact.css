@@ -1,0 +1,58 @@
+#form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center everything */
+    text-align: left;
+    margin: 0 auto; /* Centers the container */
+    max-width: 600px; /* Controls overall form width */
+    width: 100%; /* Takes full available width up to max-width */
+    padding: 2rem; /* Adds space around the form */
+}
+
+#form-field input, #form-field textarea {
+    margin-bottom: 0.5rem; /* Reduced margin since error messages handle spacing */
+    width: 100%; /* Use full width of the container */
+    max-width: 400px; /* Maximum width for inputs */
+    padding: 0.8rem; /* Makes inputs taller and more comfortable */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Specific styling for textarea height */
+#form-field textarea {
+    height: 120px; /* Fixed height - change this number */
+    min-height: 80px; /* Minimum height */
+    max-height: 300px; /* Maximum height */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+#form-field button {
+    width: 100%;
+    max-width: 200px; /* Smaller width for button */
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+#form-field label {
+    text-align: left;
+    width: 100%;
+    max-width: 400px; /* Same max-width as inputs */
+    margin-bottom: 0.5rem; /* Space between label and input */
+    font-weight: 500; /* Make labels slightly bold */
+}
+
+/* Error message styling */
+.error-message {
+    display: block;
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    min-height: 1.2em; /* Reserve space even when empty */
+}
+

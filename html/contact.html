@@ -20,9 +20,11 @@
 
     <!-- CSS Stylesheet links. -->
      <link rel="stylesheet" href="/css/template.css">
+     <link rel="stylesheet" href="/css/contact.css">
 
      <!-- JavaScript links. -->
-      <script src="/javascript/template.js"></script>
+      <script defer src="/javascript/template.js"></script>
+      <script defer src="/javascript/contact.js"></script>
 
 
 
@@ -69,6 +71,34 @@
     <h2 id="title2">
         If you want to contact us for a project or need to get in touch with customer support please use the following form
     </h2>
+
+    <form action="/" id="form-field" name="form-field" novalidate>
+        <label for="name">
+            Name
+        </label>
+        <input type="text" id="name" name="name">
+        <span class="error-message" id="name-error"></span>
+
+        <label for="number">
+            Number
+        </label>
+        <input type="number" id="number" name="number">
+        <span class="error-message" id="number-error"></span>
+
+        <label for="mail">
+            Email
+        </label>
+        <input type="email" id="mail" name="mail">
+        <span class="error-message" id="email-error"></span>
+
+        <label for="text-area">Enter message</label>
+        <textarea name="text-area" id="text-area"></textarea>
+        <span class="error-message" id="message-error"></span>
+
+
+        <span id="form-sent"></span>
+        <button type="submit">Submit</button>
+    </form>
 
 
 
