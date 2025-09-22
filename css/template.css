@@ -126,6 +126,7 @@ body {
     margin: 0 auto;
     text-align: justify;
     font-size: 1rem;
+    max-width: 800px;
 }
 
 #navbar-ul li{
@@ -267,7 +268,10 @@ body {
 
     #text-div {
         font-size: 0.9rem;
-        text-align: left;
+        text-align: left; /* Fix justified text spacing on mobile */
+        margin: 0 auto; /* Keep centering on mobile too */
+        max-width: 100%; /* Use full width on mobile */
     }
+
 }
 
