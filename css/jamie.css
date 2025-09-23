@@ -75,6 +75,10 @@ img {
     text-align: justify;
 }
 
+#div-span {
+    color: red;
+}
+
 #skillbar {
     grid-area: skillbar;
 }
