@@ -160,6 +160,59 @@ img {
     border-radius: 16px;
     border: 2px solid black;
     margin: 1rem 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.slideshow-row img:hover,
+.slideshow-row img:focus {
+    transform: scale(1.1);
+}
+
+.slideshow-row img:hover~#caption,
+.slideshow-row img:focus~#caption {
+    transform: scale(1.1);
+}
+
+/* Enlarged image state for click effect */
+.slideshow-row img.enlarged {
+    transform: scale(1.5);
+    z-index: 1000;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+.slideshow-row img.enlarged:hover {
+    transform: scale(1.5);
+    /* Override hover scale when enlarged */
+}
+
+/* Caption follows when image is enlarged */
+#slideshow .slideshow-row img.enlarged~* #caption,
+#slideshow img.enlarged~#caption {
+    transform: scale(1.5);
+    transition: transform 0.4s ease;
+}
+
+#caption.enlarged {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#slideshow p {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#slideshow p.enlarged {
+    opacity: 0;
+    transform: scale(0);
+}
+
+#caption {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    outline: none;
 }
 
 /* Section 4: Projects (Full width) */
@@ -363,12 +416,13 @@ img {
 }
 
 .project-filters {
-    margin-bottom: 1.5em;
+    margin-bottom: 3em;
     display: flex;
     gap: 1em;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 1.5em;
 }
 
 .project-filters label {

@@ -22,6 +22,28 @@ const tick = () => {
 
 tick();
 
+// Image click "enlarger"
+const slideshowImage = document.getElementById("image");
+const slideshowCaption = document.getElementById("caption");
+const slideshowIntro = document.querySelector("#slideshow p:first-child");
+
+if (slideshowImage && slideshowCaption && slideshowIntro) {
+    slideshowImage.addEventListener("click", function () {
+        this.classList.toggle("enlarged");
+        slideshowCaption.classList.toggle("enlarged");
+        slideshowIntro.classList.toggle("enlarged");
+    });
+
+    // Image click "shrinkisizer"
+    document.addEventListener("click", function (e) {
+        if (e.target !== slideshowImage && slideshowImage.classList.contains("enlarged")) {
+            slideshowImage.classList.remove("enlarged");
+            slideshowCaption.classList.remove("enlarged");
+            slideshowIntro.classList.remove("enlarged");
+        }
+    });
+}
+
 
 
 
@@ -52,11 +74,11 @@ updateSlideshow();
 document.getElementById("next").addEventListener("click", (e) => {
     currentIndex = (currentIndex + 1) % slides.length;
     updateSlideshow();
-    e.target.blur(); // Remove focus after click
+    e.target.blur();
 });
 
 document.getElementById("previous").addEventListener("click", (e) => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateSlideshow();
-    e.target.blur(); // Remove focus after click
+    e.target.blur();
 });
