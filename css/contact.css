@@ -30,7 +30,7 @@
 
 #form-field button {
     width: 100%;
-    max-width: 200px; /* Smaller width for button */
+    max-width: 200px;
     padding: 0.8rem;
     margin-top: 1rem;
 }
@@ -38,12 +38,12 @@
 #form-field label {
     text-align: left;
     width: 100%;
-    max-width: 400px; /* Same max-width as inputs */
-    margin-bottom: 0.5rem; /* Space between label and input */
-    font-weight: 500; /* Make labels slightly bold */
+    max-width: 400px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-/* Error message styling */
+
 .error-message {
     display: block;
     color: #ff6b6b;
@@ -53,6 +53,6 @@
     width: 100%;
     max-width: 400px;
     text-align: left;
-    min-height: 1.2em; /* Reserve space even when empty */
+    min-height: 1.2em;
 }
 
