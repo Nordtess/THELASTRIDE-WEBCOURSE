@@ -3,6 +3,11 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 img {
     margin-top: 0;
     max-width: 250px;
@@ -11,12 +16,76 @@ img {
     border-radius: 2rem;
 }
 
-/* Layout */
-#profile-area {
-    display: flex;
-    flex-direction: row;
+/* General layout container */
+.layout {
+    margin-bottom: 4rem;
 }
 
+/* Section 1: Profile (Image + Text) */
+#profile-area {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "profile-image profile-text";
+    gap: 2rem;
+    align-items: start;
+}
+
+#profile-image {
+    grid-area: profile-image;
+}
+
+#profile-text {
+    grid-area: profile-text;
+}
+
+/* Section 2: Skills (Skillbar + Text + Image) */
+#skillbar-area {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "skillbar skill-text skill-image";
+    gap: 2rem;
+    align-items: start;
+}
+
+#skillbar {
+    grid-area: skillbar;
+}
+
+#skill-text {
+    grid-area: skill-text;
+}
+
+#skill-image {
+    grid-area: skill-image;
+}
+
+/* Section 3: Slideshow (Full width) */
+#slideshow {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "slideshow-image";
+}
+
+#slideshow-image {
+    grid-area: slideshow-image;
+    text-align: center;
+}
+
+/* Section 4: Projects (Full width) */
+#project {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "project-image";
+}
+
+#project-image {
+    grid-area: project-image;
+    text-align: center;
+}
 
 
 
