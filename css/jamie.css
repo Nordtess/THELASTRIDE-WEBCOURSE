@@ -91,23 +91,62 @@ img {
 
 /* Section 3: Slideshow (Full width) */
 #slideshow {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-        "previous slideshow-image next";
-}
-
-#slideshow-image {
-    grid-area: slideshow-image;
     text-align: center;
 }
 
-#previous {
-    grid-area: previous;
+.slideshow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
 }
 
-#next {
-    grid-area: next;
+.slideshow-row button {
+    background: #00000080;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.slideshow-row button#previous {
+    left: -20px;
+}
+
+.slideshow-row button#next {
+    right: -20px;
+}
+
+.slideshow-row button:hover {
+    background: #000000cc;
+    box-shadow: 0 4px 16px 0 #0000004d;
+    transform: translateY(-50%) scale(1.2);
+}
+
+.slideshow-row button:focus {
+    background: #000000cc;
+    box-shadow: 0 4px 16px 0 #0000004d;
+}
+
+.slideshow-row img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 2px solid black;
 }
 
 /* Section 4: Projects (Full width) */
@@ -195,6 +234,31 @@ img {
 
     #skill-image {
         justify-self: center;
+    }
+
+    /* Slideshow mobile responsive */
+    .slideshow-row {
+        position: static;
+        gap: 0.15rem;
+        padding: 0;
+    }
+
+    .slideshow-row button {
+        position: static;
+        transform: none;
+        width: 60px;
+        height: 40px;
+        font-size: 2rem;
+        padding: 0;
+        border-radius: 8px;
+    }
+
+    .slideshow-row img {
+        max-width: 70vw;
+    }
+
+    #slideshow {
+        max-width: 100%;
     }
 
 

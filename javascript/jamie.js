@@ -18,12 +18,14 @@ function updateSlideshow() {
 updateSlideshow();
 
 
-document.getElementById("next").addEventListener("click", () => {
+document.getElementById("next").addEventListener("click", (e) => {
     currentIndex = (currentIndex + 1) % slides.length;
     updateSlideshow();
+    e.target.blur(); // Remove focus after click
 });
 
-document.getElementById("previous").addEventListener("click", () => {
+document.getElementById("previous").addEventListener("click", (e) => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateSlideshow();
+    e.target.blur(); // Remove focus after click
 });
