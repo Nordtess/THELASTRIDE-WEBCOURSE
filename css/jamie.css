@@ -286,6 +286,10 @@ img {
         max-width: 100%;
     }
 
+    .circle {
+        display: none;
+    }
+
 
 
 
