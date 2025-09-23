@@ -1,26 +1,20 @@
-/* ========== HIDDEN SCROLLBAR ========== */
-
-/* Hide scrollbar but keep functionality */
 html {
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
+    scrollbar-width: none;
+
 }
 
 body {
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
+
 }
 
-/* Webkit browsers (Chrome, Safari, Edge) - Hide completely */
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
 
-/* Firefox - Hide scrollbar */
-html {
-    scrollbar-width: none;
-}
+
 
 /* ========== MAIN STYLES ========== */
 
@@ -40,6 +34,10 @@ img {
     width: 100%;
     height: auto;
     border-radius: 2rem;
+}
+
+#main-area p {
+    padding-bottom: 0.5rem;
 }
 
 /* General layout container */
