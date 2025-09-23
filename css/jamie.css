@@ -1,3 +1,29 @@
+/* ========== HIDDEN SCROLLBAR ========== */
+
+/* Hide scrollbar but keep functionality */
+html {
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+body {
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) - Hide completely */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Firefox - Hide scrollbar */
+html {
+    scrollbar-width: none;
+}
+
+/* ========== MAIN STYLES ========== */
+
 h1 {
     font-size: 5rem;
     text-align: center;
