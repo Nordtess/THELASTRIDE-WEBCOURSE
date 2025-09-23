@@ -1,7 +1,7 @@
 const slides = [
-    { img: "/images/jamie/jamie1.png", caption: "Jamie pumping iron on the gym, wishing he had the genes of Arnold." },
-    { img: "/images/jamie/jamie2.png", caption: "Jamie also loves traveling, and do it as often as possible!" },
-    { img: "/images/jamie/jamie3.png", caption: "He also loves playing video games which he has done since early childhood." }
+    { img: "/images/jamie/jamie1.png", caption: "I am getting myself a sports car to drive around New York" },
+    { img: "/images/jamie/jamie2.png", caption: "I will inspire millions of people, listening to every word of mine" },
+    { img: "/images/jamie/jamie3.png", caption: "I will spend alot of time and money adventuring the world" }
 ];
 
 let currentIndex = 0;

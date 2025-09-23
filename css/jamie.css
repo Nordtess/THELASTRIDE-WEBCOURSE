@@ -147,6 +147,7 @@ img {
     display: block;
     border-radius: 16px;
     border: 2px solid black;
+    margin: 1rem 0;
 }
 
 /* Section 4: Projects (Full width) */
