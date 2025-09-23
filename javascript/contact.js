@@ -1,19 +1,18 @@
-// Form handling with real-time validation
 const form = document.getElementById("form-field");
 
-// Get all input elements for real-time validation
+
 const nameInput = document.getElementById("name");
 const numberInput = document.getElementById("number");
 const emailInput = document.getElementById("mail");
 const textAreaInput = document.getElementById("text-area");
 
-// Get all error elements
+
 const nameError = document.getElementById("name-error");
 const numberError = document.getElementById("number-error");
 const emailError = document.getElementById("email-error");
 const textError = document.getElementById("message-error");
 
-// Validation functions
+
 function validateName() {
     const name = nameInput.value.trim();
     const nameRegex = /^[a-zA-Z\s'-]+$/;
@@ -77,34 +76,33 @@ function validateMessage() {
     }
 }
 
-// Real-time validation with blur events
+
 nameInput.addEventListener("blur", validateName);
 numberInput.addEventListener("blur", validateNumber);
 emailInput.addEventListener("blur", validateEmail);
 textAreaInput.addEventListener("blur", validateMessage);
 
-// Form submission with validation
-form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Stop form from submitting normally
 
-    // Run all validations and get results
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    
     const isNameValid = validateName();
     const isNumberValid = validateNumber();
     const isEmailValid = validateEmail();
     const isMessageValid = validateMessage();
 
-    // Check if ALL fields are valid before submitting
+    
     if (isNameValid && isNumberValid && isEmailValid && isMessageValid) {
         console.log("🎉 All fields are valid! Form submitted successfully!");
         
-        // Show success message
+        
         const formSent = document.getElementById("form-sent");
         formSent.textContent = "Thank you for your message!";
         
-        // Reset the form after successful submission
         form.reset();
+    
     } else {
-        // Clear success message if validation fails
         const formSent = document.getElementById("form-sent");
         formSent.textContent = "";
         console.log("❌ Please fix the errors above before submitting.");
