@@ -1,13 +1,10 @@
 html {
     overflow-x: hidden;
     scrollbar-width: none;
-
 }
 
-/* */
 body {
     overflow-x: hidden;
-
 }
 
 ::-webkit-scrollbar {
@@ -184,20 +181,12 @@ img {
 
 .slideshow-row img.enlarged:hover {
     transform: scale(1.5);
-
 }
 
-
-#slideshow .slideshow-row img.enlarged~* #caption,
-#slideshow img.enlarged~#caption {
-    transform: scale(1.5);
-    transition: transform 0.4s ease;
-}
 
 #caption.enlarged {
     opacity: 0;
     transform: scale(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 #slideshow p {
@@ -359,10 +348,9 @@ img {
 .project img {
     display: block;
     margin: 0 auto 1em auto;
-    max-width: 100%;
-    height: auto;
     max-width: 10rem;
     width: 100%;
+    height: auto;
     border-radius: 12px;
     transition: transform 0.3s ease;
 }
