@@ -34,6 +34,7 @@
     <script src="/javascript/template.js"></script>
     <script defer src="/javascript/jamie.js"></script>
     <script defer src="/vue/jamie-vue.js"></script>
+    <script defer src="/vue/jamie-vue.js"></script>
 
 
 
@@ -127,9 +128,43 @@
         </div>
 
         <div class="layout">
-            <div id="project">
-                <div id="project-image">
-                    <img src="/images/jamie/jamie2.png" alt="">
+            <div id="jamie-projects">
+                <div id="app">
+                    <div class="project-intro">
+                        <p>Below are the black budget projects Jamie developed</p>
+                    </div>
+                    <div class="project-prompt">
+                        <p>Please select a letter or type a name to view projects.</p>
+                    </div>
+                    <div class="project-available">
+                        <span v-if="projects.length > 0">
+                            <strong>Available projects ({{ projects.length }}):</strong>
+                            <span>
+                                <template v-for="(project, idx) in projects">
+                                    {{ project.name }}<span v-if="idx &lt; projects.length - 1">, </span>
+                                </template>
+                            </span>
+                        </span>
+                        <span v-else>No projects available.</span>
+                    </div>
+                    <div class="project-filters">
+                        <label for="filterLetter">Filter by first letter:</label>
+                        <select v-model="filterLetter" id="filterLetter">
+                            <option value="">All</option>
+                            <option v-for="letter in letters" :key="letter" :value="letter">{{ letter }}</option>
+                        </select>
+                        <label for="filterName">Search by name:</label>
+                        <input v-model="filterName" id="filterName" type="text" placeholder="Type project name..." />
+                    </div>
+                    <div class="project-list">
+                        <div :class="['project-row', filteredProjects.length > 1 ? 'row-layout' : '']">
+                            <div v-for="project in filteredProjects" :key="project.name" class="project">
+                                <p>Project: {{ project.name }}</p>
+                                <img :src="project.image" :alt="project.name">
+                                <p>{{ project.description }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
