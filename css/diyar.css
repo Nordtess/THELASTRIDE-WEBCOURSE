@@ -1,0 +1,22 @@
+#profile-intro, #gallery, #projects {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+#profile-intro h1 { font-size: 1.8rem; margin-bottom: .5rem; }
+#profile-intro p { max-width: 65ch; }
+
+/* Slideshow */
+.gallery {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .75rem;
+  align-items: center;
+}
+#gallery-image { width: 100%; height: auto; border: 1px solid #222; border-radius: 8px; }
+#gal-prev, #gal-next { background: #111; color: #fff; border: 1px solid #333; border-radius: 8px; padding: .5rem .75rem; }
+
+/* Två layouter (G-krav) */
+@media (max-width: 600px) {
+  #profile-intro h1 { font-size: 1.4rem; }
+}

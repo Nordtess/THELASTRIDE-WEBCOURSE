@@ -20,9 +20,12 @@
 
     <!-- CSS Stylesheet links. -->
      <link rel="stylesheet" href="/css/template.css">
+     <link rel="stylesheet" href="/css/diyar.css">
+
 
      <!-- JavaScript links. -->
-      <script src="/javascript/template.js"></script>
+     <script defer src="/javascript/template.js"></script>
+     <script defer src="/javascript/diyar.js"></script>
 
 
 
@@ -34,7 +37,8 @@
 
 
 <body>
-    
+    <h1 id="title-div"> Diyar M</h1>
+
 <nav id="navbar">
     <button id="hamburger-btn" aria-label="Toggle menu">
         <span></span>
@@ -62,15 +66,34 @@
 
 
 <main id="main-area">
+  <section id="profile-intro">
+    <h1>Diyar M, Head of Sales</h1>
+    <p>
+      As Head of Sales, my mission is simple: convince clients we are protecting their data,
+      while secretly selling it at twice the price on the dark web.
+      I specialize in upselling "premium protection plans" that don't exist
+      and offering discounts that somehow cost more than the original price.
+      If you signed a contract with me, congratulations — you've already been scammed.
+    </p>
+  </section>
 
+  <!-- Bildspel -->
+  <section id="gallery" aria-label="Slideshow">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <button id="gal-prev" type="button" aria-label="Previous image">❮</button>
+      <img id="gallery-image" src="/img/gal1.jpg" alt="Project image" width="800" height="450">
+      <button id="gal-next" type="button" aria-label="Next image">❯</button>
+    </div>
+  </section>
 
-
-
-
-
-
-
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div id="projects-list"><p>jobbar på detta</p></div>
+  </section>
 </main>
+
 
 
 
