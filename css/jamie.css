@@ -26,7 +26,6 @@ body {
     z-index: 9999;
 }
 
-/* ========== MAIN STYLES ========== */
 
 h1 {
     font-size: 5rem;
@@ -50,12 +49,12 @@ img {
     padding-bottom: 0.5rem;
 }
 
-/* General layout container */
+
 .layout {
     margin-bottom: 4rem;
 }
 
-/* Section 1: Profile (Image + Text) */
+
 #profile-area {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -74,7 +73,7 @@ img {
     grid-area: profile-text;
 }
 
-/* Section 2: Skills (Skillbar + Text + Image) */
+
 #skillbar-area {
     display: grid;
     grid-template-columns: 1fr 1fr 200px;
@@ -101,7 +100,7 @@ img {
     grid-area: skill-image;
 }
 
-/* Section 3: Slideshow (Full width) */
+
 #slideshow {
     text-align: center;
 }
@@ -174,7 +173,7 @@ img {
     transform: scale(1.1);
 }
 
-/* Enlarged image state for click effect */
+
 .slideshow-row img.enlarged {
     transform: scale(1.5);
     z-index: 1000;
@@ -184,10 +183,10 @@ img {
 
 .slideshow-row img.enlarged:hover {
     transform: scale(1.5);
-    /* Override hover scale when enlarged */
+
 }
 
-/* Caption follows when image is enlarged */
+
 #slideshow .slideshow-row img.enlarged~* #caption,
 #slideshow img.enlarged~#caption {
     transform: scale(1.5);
@@ -215,7 +214,7 @@ img {
     outline: none;
 }
 
-/* Section 4: Projects (Full width) */
+
 #project {
     display: grid;
     grid-template-columns: 1fr;
@@ -242,120 +241,6 @@ img {
     text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 800px) {
-
-    #profile-area {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "profile-image"
-            "profile-text";
-        padding: 0 1rem;
-        max-width: 100%;
-    }
-
-    #profile-image {
-        justify-self: center;
-        max-width: 100%;
-        text-align: center;
-    }
-
-    #profile-image img {
-        margin: 0 auto;
-        display: block;
-    }
-
-    #profile-text {
-        padding: 0;
-        max-width: 100%;
-        word-wrap: break-word;
-    }
-
-    #skillbar-area {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "skillbar"
-            "skill-text"
-            "skill-image";
-        padding: 0 1rem;
-        max-width: 100%;
-    }
-
-    #skillbar {
-        justify-self: center;
-    }
-
-    #skill-text {
-        padding: 0;
-        max-width: 100%;
-        word-wrap: break-word;
-    }
-
-    #skill-image {
-        justify-self: center;
-        text-align: center;
-    }
-
-    #skill-image img {
-        margin: 0 auto;
-        display: block;
-    }
-
-    /* Slideshow mobile responsive */
-    .slideshow-row {
-        position: static;
-        gap: 0.15rem;
-        padding: 0;
-    }
-
-    .slideshow-row button {
-        position: static;
-        transform: none;
-        width: 60px;
-        height: 40px;
-        font-size: 2rem;
-        padding: 0;
-        border-radius: 8px;
-    }
-
-    .slideshow-row img {
-        max-width: 70vw;
-    }
-
-    #slideshow {
-        max-width: 100%;
-    }
-
-    .circle {
-        display: none;
-    }
-
-
-
-
-
-
-    img {
-        max-width: 250px;
-        width: 90%;
-        height: auto;
-    }
-}
-
-/* ========== VUE PROJECTS SECTION (FROM WORKING EXAMPLE) ========== */
 
 .project-intro {
     margin-bottom: 0.5em;
@@ -508,7 +393,7 @@ img {
     transition: 0.3s ease-in;
 }
 
-/* ========== ANIMATED SKILL BARS ========== */
+
 
 #skillbar {
     font-family: "Poppins", sans-serif;
@@ -602,7 +487,7 @@ img {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Keyframe animations for different percentages */
+
 @keyframes fillBars90 {
     from {
         width: 0%;
@@ -630,5 +515,101 @@ img {
 
     to {
         width: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    #profile-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile-image"
+            "profile-text";
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    #profile-image {
+        justify-self: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #profile-image img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    #profile-text {
+        padding: 0;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    #skillbar-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "skillbar"
+            "skill-text"
+            "skill-image";
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    #skillbar {
+        justify-self: center;
+    }
+
+    #skill-text {
+        padding: 0;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    #skill-image {
+        justify-self: center;
+        text-align: center;
+    }
+
+    #skill-image img {
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    .slideshow-row {
+        position: static;
+        gap: 0.15rem;
+        padding: 0;
+    }
+
+    .slideshow-row button {
+        position: static;
+        transform: none;
+        width: 60px;
+        height: 40px;
+        font-size: 2rem;
+        padding: 0;
+        border-radius: 8px;
+    }
+
+    .slideshow-row img {
+        max-width: 70vw;
+    }
+
+    #slideshow {
+        max-width: 100%;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    img {
+        max-width: 250px;
+        width: 90%;
+        height: auto;
     }
 }
