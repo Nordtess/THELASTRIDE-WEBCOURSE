@@ -1,0 +1,36 @@
+#profile h1 {
+    text-align: center;
+}
+
+#profile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+
+@media (min-width: 768px) {
+    #profile {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 1rem 1.25rem;
+    }
+
+    #profile h1 {
+        flex: 0 0 100%;
+        margin: 0 0 .5rem;
+    }
+
+    #profile img {
+        flex: 0 0 180px;
+        max-width: 180px;
+    }
+
+    #profile p {
+        flex: 1 1 0;
+        margin: 0;
+    }
+}
