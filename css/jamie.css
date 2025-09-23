@@ -29,6 +29,7 @@ img {
         "profile-image profile-text";
     gap: 2rem;
     align-items: start;
+    text-align: justify;
 }
 
 #profile-image {
@@ -47,6 +48,7 @@ img {
         "skillbar skill-text skill-image";
     gap: 2rem;
     align-items: start;
+    text-align: justify;
 }
 
 #skillbar {
@@ -89,15 +91,6 @@ img {
 
 
 
-
-
-/* #profile-div {
-    display: flex;
-    align-items: flex-start;
-    text-align: justify;
-    gap: 1rem;
-} */
-
 #profile-div img {
     padding-right: 1rem;
     margin-top: 0;
@@ -125,14 +118,59 @@ img {
 @media (max-width: 800px) {
 
     #profile-area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: justify;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile-image"
+            "profile-text";
+        padding: 0 1rem;
+        max-width: 100%;
     }
 
+    #profile-image {
+        justify-self: center;
+        max-width: 100%;
+    }
+
+    #profile-text {
+        padding: 0;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    #skillbar-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "skillbar"
+            "skill-text"
+            "skill-image";
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    #skillbar {
+        justify-self: center;
+    }
+
+    #skill-text {
+        padding: 0;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    #skill-image {
+        justify-self: center;
+    }
+
+
+
+
+
+
     img {
-        max-width: 300px;
-        width: 300px;
+        max-width: 250px;
+        width: 90%;
+        height: auto;
     }
 }
