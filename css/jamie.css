@@ -206,6 +206,12 @@ img {
     #profile-image {
         justify-self: center;
         max-width: 100%;
+        text-align: center;
+    }
+
+    #profile-image img {
+        margin: 0 auto;
+        display: block;
     }
 
     #profile-text {
@@ -237,6 +243,12 @@ img {
 
     #skill-image {
         justify-self: center;
+        text-align: center;
+    }
+
+    #skill-image img {
+        margin: 0 auto;
+        display: block;
     }
 
     /* Slideshow mobile responsive */
