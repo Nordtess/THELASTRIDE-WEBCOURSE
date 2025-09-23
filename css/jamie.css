@@ -69,7 +69,7 @@ img {
 /* Section 2: Skills (Skillbar + Text + Image) */
 #skillbar-area {
     display: grid;
-    grid-template-columns: 200px 1fr 200px;
+    grid-template-columns: 1fr 1fr 200px;
     grid-template-areas:
         "skillbar skill-text skill-image";
     gap: 2rem;
@@ -438,7 +438,7 @@ img {
     animation: fillBars 4s ease-in-out;
     border: 2px solid #000;
     width: 0%;
-    box-shadow: 
+    box-shadow:
         inset 0 1px 3px rgba(255, 255, 255, 0.2),
         0 2px 4px rgba(0, 0, 0, 0.4);
 }
