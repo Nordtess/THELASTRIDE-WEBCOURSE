@@ -92,14 +92,22 @@ img {
 /* Section 3: Slideshow (Full width) */
 #slideshow {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-template-areas:
-        "slideshow-image";
+        "previous slideshow-image next";
 }
 
 #slideshow-image {
     grid-area: slideshow-image;
     text-align: center;
+}
+
+#previous {
+    grid-area: previous;
+}
+
+#next {
+    grid-area: next;
 }
 
 /* Section 4: Projects (Full width) */
