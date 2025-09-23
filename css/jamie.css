@@ -383,6 +383,13 @@ img {
     margin-bottom: 2em;
     max-width: 500px;
     width: 100%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project:hover,
+.project:focus {
+    transform: scale(1.1);
 }
 
 .project img {
@@ -393,6 +400,12 @@ img {
     max-width: 10rem;
     width: 100%;
     border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project img:hover,
+.project img:focus {
+    transform: scale(1.1);
 }
 
 .controls {
