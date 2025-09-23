@@ -1,3 +1,34 @@
+// Mouse-pointer animation.
+const circleElement = document.querySelector(".circle");
+
+const mouse = { x: 0, y: 0 },
+    circle = { x: 0, y: 0 };
+
+window.addEventListener("mousemove", e => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+});
+
+const speed = 0.15;
+
+const tick = () => {
+    circle.x += (mouse.x - circle.x) * speed;
+    circle.y += (mouse.y - circle.y) * speed;
+
+    circleElement.style.transform =
+        `translate(${circle.x}px, ${circle.y}px)`;
+    window.requestAnimationFrame(tick);
+}
+
+tick();
+
+
+
+
+
+
+
+// Slideshow.
 const slides = [
     { img: "/images/jamie/jamie1.png", caption: "I am getting myself a sports car to drive around New York" },
     { img: "/images/jamie/jamie2.png", caption: "I will inspire millions of people, listening to every word of mine" },
