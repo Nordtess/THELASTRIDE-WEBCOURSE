@@ -1,18 +1,116 @@
-#profile img{display:block;width:100%;max-width:240px;height:auto}
-#profile p{margin:.5rem 0 0}
-@media (min-width:768px){
-  #profile{display:flex;flex-wrap:wrap;align-items:flex-start;gap:1rem 1.25rem}
-  #profile h1{flex:0 0 100%;margin:0 0 .5rem}
-  #profile img{flex:0 0 180px;max-width:180px}
-  #profile p{flex:1 1 0;margin:0;max-width:65ch}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1em;
 }
-#projects .controls{display:flex;gap:.5rem;align-items:center;margin:.5rem 0 1rem}
-#projects input,#projects select{padding:.4rem}
-#project-list{display:grid;gap:.75rem}
-#project-list article{padding:.75rem;border:1px solid #ddd;border-radius:.5rem}
-#gallery .slider{display:flex;gap:.75rem;align-items:center}
-#gallery img{max-width:100%;height:auto;display:block}
-#skills .skill{margin:.5rem 0}
-#skills .bar{height:8px;background:#eee;border-radius:999px;overflow:hidden}
-#skills .fill{height:100%;width:0;background:#4a90e2;transition:width .8s ease}
-#skills.in .skill{opacity:1;transform:none}
+h1,h2 {
+    flex-basis: 100%;
+    margin: 1em 0;
+}
+button, input{
+    padding: 0.2em;
+    font-size: 1em;
+    border: 1px solid #fff;;
+   
+    background-color: rgba(0,0,0,0);
+    color: white;
+    cursor: pointer;
+}
+
+/* Profile */
+#profile {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+}
+#profile h1 {
+    text-align: center;
+    font-size:3em
+}
+
+#profile img {
+    flex-basis: 100%;
+    max-width: 50%; 
+    border-radius: 1em;
+}
+
+@media (min-width: 768px) {
+    #profile img {
+        flex-basis: 20%;
+        max-width: 20%;
+    }
+
+    #profile p {
+        flex-basis: 80%;
+        padding: 0 1em;
+
+    }
+}
+
+/* Projects */
+#project-filtering {
+    padding: 1em 0;
+}
+#project-list {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap:1em;
+}
+
+#project-list article {
+    flex-basis: 40%;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ddd;
+    border-radius: 1em;
+}
+
+@media (min-width: 768px) {
+    #project-list article {
+        flex-basis: 30%;
+        
+    }
+}
+
+/* Gallery */
+#gallery {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gallery img {
+
+    max-height: 260px;
+    height: auto;
+
+}
+
+
+/* Skills */
+#skills {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+}
+
+
+#skills .skill {
+    flex-basis: 100%;
+    margin: .5rem 0;
+}
+
+#skills .bar {
+    height: 1em;
+    background: #eee;
+    overflow: hidden;
+}
+
+#skills .fill {
+    height: 100%;
+    width: 0;
+    background: #f00;
+    transition: all 5.8s ease;
+}

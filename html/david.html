@@ -67,6 +67,7 @@
     <main id="main-area">
         <section id="profile">
             <h1>David - CEO</h1>
+
             <img src="/images/david.png" alt="David">
             <p>Hi, I’m David, CEO of North Design Web Studios. We design and build clean, fast, and accessible websites
                 and web apps that turn ideas into real results. My focus is simple: thoughtful UX, modern front-end
@@ -75,33 +76,35 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <div id="project-list"></div>
+            <div id="project-filtering"> <input type="text" id="filter" placeholder="Filter projects...">
+                <button id="sort-az">Sort A–Ö</button>
+                <button id="sort-za">Sort Ö–A</button>
+            </div>
+            <div id="project-list">
+            </div>
         </section>
 
         <section id="gallery" data-images="/img/bild1.png,/img/bild2.png,/img/bild3.png">
             <h2>Gallery</h2>
-            <button id="prev">Prev.</button>
-                  <button id="next">Next.</button>
+            <button id="prev"> &#x2B05;</button>
+
             <img id="slide" alt="">
-      
+            <button id="next"> &#x27A1;</button>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skill" data-level="88">
-                <span>HTML</span>
+            <div class="skill" data-level="85"><span>HTML</span>
                 <div class="bar">
                     <div class="fill"></div>
                 </div>
             </div>
-            <div class="skill" data-level="60">
-                <span>CSS</span>
+            <div class="skill" data-level="80"><span>CSS</span>
                 <div class="bar">
                     <div class="fill"></div>
                 </div>
             </div>
-            <div class="skill" data-level="92">
-                <span>JavaScript</span>
+            <div class="skill" data-level="75"><span>JavaScript</span>
                 <div class="bar">
                     <div class="fill"></div>
                 </div>
