@@ -681,12 +681,14 @@ img {
 
     .slideshow-row img:hover,
     .slideshow-row img:focus {
-        transform: scale(1.06);
+        transform: none;
+        margin: 1rem 0;
+        border: 2px solid black;
     }
 
     .slideshow-row img:hover~#caption,
     .slideshow-row img:focus~#caption {
-        transform: scale(1.06);
+        transform: none;
     }
 
 
@@ -705,6 +707,28 @@ img {
 
     .circle {
         display: none;
+    }
+
+    
+    #profile-text:hover {
+        transform: none;
+    }
+
+    #profile-text:hover::before {
+        opacity: 0;
+    }
+
+    #skill-text:hover {
+        transform: none;
+    }
+
+    #skill-text:hover::before {
+        opacity: 0;
+    }
+
+    .project-sorting {
+        display: flex;
+        flex-direction: column;
     }
 
     img {
