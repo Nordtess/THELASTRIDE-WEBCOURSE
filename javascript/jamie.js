@@ -101,18 +101,21 @@ document.addEventListener('DOMContentLoaded', function () {
     function getFilteredProjects() {
         let filtered = projects;
 
+        // Return empty array if no filters are active
         if (!filterLetter && !filterName) {
             return [];
         }
 
-        if (filterLetter) {
+        // Apply letter filter if active
+        if (filterLetter && !filterName) {
             filtered = filtered.filter(p => {
                 if (!p.name) return false;
                 return p.name[0] && p.name[0].toUpperCase() === filterLetter;
             });
         }
 
-        if (filterName) {
+        // Apply name filter if active
+        if (filterName && !filterLetter) {
             const search = filterName.trim().toLowerCase();
             filtered = filtered.filter(p => {
                 const name = p.name ? p.name.toLowerCase() : '';
@@ -175,15 +178,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function handleFilterChange() {
+    function handleLetterFilterChange() {
         filterLetter = filterLetterSelect.value;
+        // Clear name filter when letter filter is used
+        if (filterLetter) {
+            filterName = "";
+            filterNameInput.value = "";
+        }
+        renderProjects();
+    }
+
+    function handleNameFilterChange() {
         filterName = filterNameInput.value;
+        // Clear letter filter when name filter is used
+        if (filterName.trim()) {
+            filterLetter = "";
+            filterLetterSelect.value = "";
+        }
         renderProjects();
     }
 
     if (filterLetterSelect && filterNameInput) {
-        filterLetterSelect.addEventListener('change', handleFilterChange);
-        filterNameInput.addEventListener('input', handleFilterChange);
+        filterLetterSelect.addEventListener('change', handleLetterFilterChange);
+        filterNameInput.addEventListener('input', handleNameFilterChange);
 
         axios.get("/json/jamie.json").then((response) => {
             projects = response.data;
