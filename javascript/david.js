@@ -46,11 +46,24 @@ if (gallery) {
 
 
   // Skills
-const skillBars = document.querySelectorAll('#skills .skill');
-skillBars.forEach(skill => {
-  const level = skill.dataset.level;
-  skill.querySelector('.fill').style.width = level + '%';
-});
+const skills = document.getElementById('skills');
+if (skills) {
+  function checkScroll() {
+
+    const rect = skills.getBoundingClientRect();
+    const visible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (visible) {
+        console.log('Skills visible');
+      document.querySelectorAll('#skills .skill').forEach(skill => {
+        const level = skill.dataset.level || '0';
+        skill.querySelector('.fill').style.width = level + '%';
+      });
+      window.removeEventListener('scroll', checkScroll);
+    }
+  }
+  window.addEventListener('scroll', checkScroll);
+  checkScroll();
+}
 
 
 });
