@@ -31,12 +31,16 @@ function validateName() {
 
 function validateNumber() {
     const number = numberInput.value.trim();
-    const numberRegex = /^[\+]?[\d\s\-\(\)]{7,15}$/;
+    const numberRegex = /^[\+]?[\d][\d\s\-\(\)]*$/;
+    const digitsOnly = number.replace(/[\D]/g, '');
     
     if (number === "") {
         numberError.textContent = "Please enter your phone number";
         return false;
     } else if (!numberRegex.test(number)) {
+        numberError.textContent = "Please enter a valid phone number format";
+        return false;
+    } else if (digitsOnly.length < 7 || digitsOnly.length > 15) {
         numberError.textContent = "Please enter between 7-15 digits";
         return false;
     } else {
@@ -94,17 +98,11 @@ form.addEventListener("submit", (event) => {
 
     
     if (isNameValid && isNumberValid && isEmailValid && isMessageValid) {
-        console.log("🎉 All fields are valid! Form submitted successfully!");
-        
-        
         const formSent = document.getElementById("form-sent");
         formSent.textContent = "Thank you for your message!";
-        
         form.reset();
-    
     } else {
         const formSent = document.getElementById("form-sent");
         formSent.textContent = "";
-        console.log("❌ Please fix the errors above before submitting.");
     }
 });
