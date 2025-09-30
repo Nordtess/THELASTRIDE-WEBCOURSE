@@ -101,12 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function getFilteredProjects() {
         let filtered = projects;
 
-        // Return empty array if no filters are active
         if (!filterLetter && !filterName) {
             return [];
         }
 
-        // Apply letter filter if active
         if (filterLetter && !filterName) {
             filtered = filtered.filter(p => {
                 if (!p.name) return false;
@@ -114,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Apply name filter if active
         if (filterName && !filterLetter) {
             const search = filterName.trim().toLowerCase();
             filtered = filtered.filter(p => {
@@ -180,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleLetterFilterChange() {
         filterLetter = filterLetterSelect.value;
-        // Clear name filter when letter filter is used
         if (filterLetter) {
             filterName = "";
             filterNameInput.value = "";
@@ -190,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleNameFilterChange() {
         filterName = filterNameInput.value;
-        // Clear letter filter when name filter is used
         if (filterName.trim()) {
             filterLetter = "";
             filterLetterSelect.value = "";
@@ -210,23 +205,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Sorting functionality - NEW
     const sortAZBtn = document.getElementById("sort-az");
     const sortZABtn = document.getElementById("sort-za");
 
     function sortProjectsAZ() {
         if (projects.length === 0) return;
 
-        // Clear current filters to show all projects
         filterLetter = "";
         filterName = "";
         filterLetterSelect.value = "";
         filterNameInput.value = "";
 
-        // Sort projects A-Z by name
         const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
 
-        // Render sorted projects
         projectContainer.innerHTML = '';
         projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
 
@@ -245,16 +236,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function sortProjectsZA() {
         if (projects.length === 0) return;
 
-        // Clear current filters to show all projects
         filterLetter = "";
         filterName = "";
         filterLetterSelect.value = "";
         filterNameInput.value = "";
 
-        // Sort projects Z-A by name
         const sortedProjects = [...projects].sort((a, b) => b.name.localeCompare(a.name));
 
-        // Render sorted projects
         projectContainer.innerHTML = '';
         projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
 
@@ -270,17 +258,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Add event listeners for sorting buttons
     if (sortAZBtn && sortZABtn) {
         sortAZBtn.addEventListener('click', (e) => {
             sortProjectsAZ();
-            e.target.blur(); // Remove focus from button
+            e.target.blur();
         });
 
         sortZABtn.addEventListener('click', (e) => {
             sortProjectsZA();
-            e.target.blur(); // Remove focus from button
+            e.target.blur();
         });
     }
 
-}); // End of DOMContentLoaded
+});
