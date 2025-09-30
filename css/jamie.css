@@ -43,6 +43,8 @@ img {
     border-radius: 2rem;
 }
 
+
+
 #main-area p {
     padding-bottom: 0.5rem;
 }
@@ -206,6 +208,15 @@ img {
     width: 250px;
 }
 
+#profile-text {
+    transition: 0.3s ease-in-out;
+}
+
+#profile-text:hover {
+    transform: scale(1.02);
+    border-style: solid;
+    border-radius: 8px;
+}
 
 #profile-text-div p {
     margin-bottom: 0.5rem;
