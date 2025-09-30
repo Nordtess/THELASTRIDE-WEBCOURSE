@@ -324,6 +324,46 @@ img {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
+.project-sorting {
+    margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #333;
+}
+
+.project-sorting label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.project-sorting button {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.project-sorting button:hover {
+    background-color: #333;
+    border-color: #666;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.project-sorting button:active {
+    transform: translateY(1px);
+}
+
 .project-list {
     display: flex;
     flex-direction: column;
