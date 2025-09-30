@@ -181,7 +181,7 @@ img {
 
 .slideshow-row img.enlarged {
     transform: scale(1.5);
-    z-index: 1000;
+    z-index: 50;
     position: relative;
     transition: transform 0.4s ease;
 }
@@ -693,12 +693,24 @@ img {
 
 
     .slideshow-row img.enlarged {
-        transform: scale(1.3);
-
+        transform: none;
+        z-index: auto;
+        position: static;
     }
 
     .slideshow-row img.enlarged:hover {
-        transform: scale(1.3);
+        transform: none;
+    }
+
+    
+    #caption.enlarged {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    #slideshow p.enlarged {
+        opacity: 1;
+        transform: scale(1);
     }
 
     #slideshow {
@@ -724,6 +736,11 @@ img {
 
     #skill-text:hover::before {
         opacity: 0;
+    }
+
+    .slideshow-row button:hover {
+        box-shadow: none;
+        transform: none;
     }
 
     .project-sorting {

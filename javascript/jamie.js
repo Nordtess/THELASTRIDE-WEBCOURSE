@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
     // Mouse-pointer animation
     const circleElement = document.querySelector(".circle");
 
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.toggle("enlarged");
             slideshowCaption.classList.toggle("enlarged");
             slideshowIntro.classList.toggle("enlarged");
+            clickMe.style.display = "none";
         });
 
         // Image click "shrinkisizer"
@@ -45,6 +47,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    function isMobile() {
+        return window.innerWidth <= 800;
+    }
+
+
+
+    // Click-me text "show-or-not"
+    const clickMeImage = document.getElementById("image");
+    const clickMe = document.getElementById("click-me");
+
+    if (clickMeImage && clickMe) {
+        clickMe.style.display = "none";
+        clickMe.style.position = "absolute";
+        clickMe.style.right = "-200px";
+        clickMe.style.top = "50%";
+        clickMe.style.transform = "translateY(-50%)";
+        clickMe.style.backgroundColor = "#000000cc";
+        clickMe.style.color = "white";
+        clickMe.style.padding = "8px 12px";
+        clickMe.style.borderRadius = "8px";
+        clickMe.style.fontSize = "20px";
+        clickMe.style.whiteSpace = "nowrap";
+        clickMe.style.zIndex = "10";
+
+        if (!isMobile()) {
+            clickMeImage.addEventListener("mouseenter", () => {
+                clickMe.style.display = "block";
+            });
+
+            clickMeImage.addEventListener("mouseleave", () => {
+                clickMe.style.display = "none";
+            });
+        }
+
+        window.addEventListener("resize", () => {
+            if (isMobile()) {
+                clickMe.style.display = "none";
+            }
+        });
+    }
+
 
 
 
