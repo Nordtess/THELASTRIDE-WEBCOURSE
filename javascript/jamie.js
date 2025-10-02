@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Mouse-pointer animation
-    const circleElement = document.querySelector(".circle");
+    const $circleElement = document.querySelector(".circle");
 
     const mouse = { x: 0, y: 0 },
         circle = { x: 0, y: 0 };
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         circle.x += (mouse.x - circle.x) * speed;
         circle.y += (mouse.y - circle.y) * speed;
 
-        circleElement.style.transform =
+        $circleElement.style.transform =
             `translate(${circle.x}px, ${circle.y}px)`;
         window.requestAnimationFrame(tick);
     }
@@ -26,24 +26,23 @@ document.addEventListener('DOMContentLoaded', function () {
     tick();
 
     // Image click "enlarger"
-    const slideshowImage = document.getElementById("image");
-    const slideshowCaption = document.getElementById("caption");
-    const slideshowIntro = document.querySelector("#slideshow p:first-child");
+    const $slideshowImage = document.getElementById("image");
+    const $slideshowCaption = document.getElementById("caption");
+    const $slideshowIntro = document.querySelector("#slideshow p:first-child");
 
-    if (slideshowImage && slideshowCaption && slideshowIntro) {
-        slideshowImage.addEventListener("click", function () {
+    if ($slideshowImage && $slideshowCaption && $slideshowIntro) {
+        $slideshowImage.addEventListener("click", function () {
             this.classList.toggle("enlarged");
-            slideshowCaption.classList.toggle("enlarged");
-            slideshowIntro.classList.toggle("enlarged");
-            clickMe.style.display = "none";
+            $slideshowCaption.classList.toggle("enlarged");
+            $slideshowIntro.classList.toggle("enlarged");
         });
 
         // Image click "shrinkisizer"
         document.addEventListener("click", function (e) {
-            if (e.target !== slideshowImage && slideshowImage.classList.contains("enlarged")) {
-                slideshowImage.classList.remove("enlarged");
-                slideshowCaption.classList.remove("enlarged");
-                slideshowIntro.classList.remove("enlarged");
+            if (e.target !== $slideshowImage && $slideshowImage.classList.contains("enlarged")) {
+                $slideshowImage.classList.remove("enlarged");
+                $slideshowCaption.classList.remove("enlarged");
+                $slideshowIntro.classList.remove("enlarged");
             }
         });
     }
@@ -55,36 +54,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Click-me text "show-or-not"
-    const clickMeImage = document.getElementById("image");
-    const clickMe = document.getElementById("click-me");
+    const $clickMeImage = document.getElementById("image");
+    const $clickMe = document.getElementById("click-me");
 
-    if (clickMeImage && clickMe) {
-        clickMe.style.display = "none";
-        clickMe.style.position = "absolute";
-        clickMe.style.right = "-200px";
-        clickMe.style.top = "50%";
-        clickMe.style.transform = "translateY(-50%)";
-        clickMe.style.backgroundColor = "#000000cc";
-        clickMe.style.color = "white";
-        clickMe.style.padding = "8px 12px";
-        clickMe.style.borderRadius = "8px";
-        clickMe.style.fontSize = "20px";
-        clickMe.style.whiteSpace = "nowrap";
-        clickMe.style.zIndex = "10";
+    if ($clickMeImage && $clickMe) {
+        $clickMe.style.display = "none";
+        $clickMe.style.position = "absolute";
+        $clickMe.style.right = "-200px";
+        $clickMe.style.top = "50%";
+        $clickMe.style.transform = "translateY(-50%)";
+        $clickMe.style.backgroundColor = "#000000cc";
+        $clickMe.style.color = "white";
+        $clickMe.style.padding = "8px 12px";
+        $clickMe.style.borderRadius = "8px";
+        $clickMe.style.fontSize = "20px";
+        $clickMe.style.whiteSpace = "nowrap";
+        $clickMe.style.zIndex = "10";
 
         if (!isMobile()) {
-            clickMeImage.addEventListener("mouseenter", () => {
-                clickMe.style.display = "block";
+            $clickMeImage.addEventListener("mouseenter", () => {
+                $clickMe.style.display = "block";
             });
 
-            clickMeImage.addEventListener("mouseleave", () => {
-                clickMe.style.display = "none";
+            $clickMeImage.addEventListener("mouseleave", () => {
+                $clickMe.style.display = "none";
             });
         }
 
         window.addEventListener("resize", () => {
             if (isMobile()) {
-                clickMe.style.display = "none";
+                $clickMe.style.display = "none";
             }
         });
     }
@@ -104,12 +103,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     let currentIndex = 0;
-    const imgEl = document.getElementById("image");
-    const captionEl = document.getElementById("caption");
+    const $imgEl = document.getElementById("image");
+    const $captionEl = document.getElementById("caption");
 
     function updateSlideshow() {
-        imgEl.src = slides[currentIndex].img;
-        captionEl.textContent = slides[currentIndex].caption;
+        $imgEl.src = slides[currentIndex].img;
+        $captionEl.textContent = slides[currentIndex].caption;
     }
 
 
@@ -137,10 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let filterLetter = "";
     let filterName = "";
 
-    const filterLetterSelect = document.getElementById("filterLetter");
-    const filterNameInput = document.getElementById("filterName");
-    const projectContainer = document.getElementById("project-container");
-    const projectCountDisplay = document.getElementById("project-count-display");
+    const $filterLetterSelect = document.getElementById("filterLetter");
+    const $filterNameInput = document.getElementById("filterName");
+    const $projectContainer = document.getElementById("project-container");
+    const $projectCountDisplay = document.getElementById("project-count-display");
 
     function getFilteredProjects() {
         let filtered = projects;
@@ -180,30 +179,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateLetterOptions() {
         const letters = getAvailableLetters();
-        filterLetterSelect.innerHTML = '<option value="">All</option>';
+        $filterLetterSelect.innerHTML = '<option value="">All</option>';
 
         letters.forEach(letter => {
             const option = document.createElement('option');
             option.value = letter;
             option.textContent = letter;
-            filterLetterSelect.appendChild(option);
+            $filterLetterSelect.appendChild(option);
         });
     }
 
     function updateProjectCount() {
         if (projects.length > 0) {
             const projectNames = projects.map(p => p.name).join(', ');
-            projectCountDisplay.innerHTML = `<strong>Available projects (${projects.length}):</strong> <span>${projectNames}</span>`;
+            $projectCountDisplay.innerHTML = `<strong>Available projects (${projects.length}):</strong> <span>${projectNames}</span>`;
         } else {
-            projectCountDisplay.textContent = 'No projects available.';
+            $projectCountDisplay.textContent = 'No projects available.';
         }
     }
 
     function renderProjects() {
         const filteredProjects = getFilteredProjects();
 
-        projectContainer.innerHTML = '';
-        projectContainer.className = filteredProjects.length > 1 ? 'project-row row-layout' : 'project-row';
+        $projectContainer.innerHTML = '';
+        $projectContainer.className = filteredProjects.length > 1 ? 'project-row row-layout' : 'project-row';
 
         filteredProjects.forEach(project => {
             const projectDiv = document.createElement('div');
@@ -215,31 +214,31 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>${project.description}</p>
         `;
 
-            projectContainer.appendChild(projectDiv);
+            $projectContainer.appendChild(projectDiv);
         });
     }
 
     function handleLetterFilterChange() {
-        filterLetter = filterLetterSelect.value;
+        filterLetter = $filterLetterSelect.value;
         if (filterLetter) {
             filterName = "";
-            filterNameInput.value = "";
+            $filterNameInput.value = "";
         }
         renderProjects();
     }
 
     function handleNameFilterChange() {
-        filterName = filterNameInput.value;
+        filterName = $filterNameInput.value;
         if (filterName.trim()) {
             filterLetter = "";
-            filterLetterSelect.value = "";
+            $filterLetterSelect.value = "";
         }
         renderProjects();
     }
 
-    if (filterLetterSelect && filterNameInput) {
-        filterLetterSelect.addEventListener('change', handleLetterFilterChange);
-        filterNameInput.addEventListener('input', handleNameFilterChange);
+    if ($filterLetterSelect && $filterNameInput) {
+        $filterLetterSelect.addEventListener('change', handleLetterFilterChange);
+        $filterNameInput.addEventListener('input', handleNameFilterChange);
 
         axios.get("/json/jamie.json").then((response) => {
             projects = response.data;
@@ -249,21 +248,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const sortAZBtn = document.getElementById("sort-az");
-    const sortZABtn = document.getElementById("sort-za");
+    const $sortAZBtn = document.getElementById("sort-az");
+    const $sortZABtn = document.getElementById("sort-za");
 
     function sortProjectsAZ() {
         if (projects.length === 0) return;
 
         filterLetter = "";
         filterName = "";
-        filterLetterSelect.value = "";
-        filterNameInput.value = "";
+        $filterLetterSelect.value = "";
+        $filterNameInput.value = "";
 
         const sortedProjects = [...projects].sort((a, b) => a.name.localeCompare(b.name));
 
-        projectContainer.innerHTML = '';
-        projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
+        $projectContainer.innerHTML = '';
+        $projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
 
         sortedProjects.forEach(project => {
             const projectDiv = document.createElement('div');
@@ -273,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="${project.image}" alt="${project.name}">
             <p>${project.description}</p>
         `;
-            projectContainer.appendChild(projectDiv);
+            $projectContainer.appendChild(projectDiv);
         });
     }
 
@@ -282,13 +281,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         filterLetter = "";
         filterName = "";
-        filterLetterSelect.value = "";
-        filterNameInput.value = "";
+        $filterLetterSelect.value = "";
+        $filterNameInput.value = "";
 
         const sortedProjects = [...projects].sort((a, b) => b.name.localeCompare(a.name));
 
-        projectContainer.innerHTML = '';
-        projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
+        $projectContainer.innerHTML = '';
+        $projectContainer.className = sortedProjects.length > 1 ? 'project-row row-layout' : 'project-row';
 
         sortedProjects.forEach(project => {
             const projectDiv = document.createElement('div');
@@ -298,17 +297,17 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="${project.image}" alt="${project.name}">
             <p>${project.description}</p>
         `;
-            projectContainer.appendChild(projectDiv);
+            $projectContainer.appendChild(projectDiv);
         });
     }
 
-    if (sortAZBtn && sortZABtn) {
-        sortAZBtn.addEventListener('click', (e) => {
+    if ($sortAZBtn && $sortZABtn) {
+        $sortAZBtn.addEventListener('click', (e) => {
             sortProjectsAZ();
             e.target.blur();
         });
 
-        sortZABtn.addEventListener('click', (e) => {
+        $sortZABtn.addEventListener('click', (e) => {
             sortProjectsZA();
             e.target.blur();
         });
