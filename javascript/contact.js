@@ -81,6 +81,54 @@ function validateMessage() {
 }
 
 
+// Check if all fields are valid for dynamic button styling
+function areAllFieldsValid() {
+    const name = $nameInput.value.trim();
+    const number = $numberInput.value.trim();
+    const email = $emailInput.value.trim();
+    const message = $textAreaInput.value.trim();
+    
+    // Check if all fields have values and pass validation
+    if (!name || !number || !email || !message) {
+        return false;
+    }
+    
+    return validateName() && validateNumber() && validateEmail() && validateMessage();
+}
+
+// Get submit button for hover effects
+const $submitButton = document.querySelector("#form-field button");
+
+// Add dynamic hover effects to submit button
+if ($submitButton) {
+    $submitButton.addEventListener("mouseenter", () => {
+        if (areAllFieldsValid()) {
+            // Green border for valid form - MUCH MORE PROMINENT
+            $submitButton.style.borderColor = "#00ff00";
+            $submitButton.style.borderWidth = "5px";
+            $submitButton.style.borderStyle = "solid";
+            $submitButton.style.boxShadow = "0 0 20px rgba(0, 255, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9)";
+            $submitButton.style.transform = "translateY(-2px) scale(1.02)";
+        } else {
+            // Red border for invalid form - MUCH MORE PROMINENT  
+            $submitButton.style.borderColor = "#ff0000";
+            $submitButton.style.borderWidth = "5px";
+            $submitButton.style.borderStyle = "solid";
+            $submitButton.style.boxShadow = "0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9)";
+            $submitButton.style.transform = "translateY(-2px) scale(1.02)";
+        }
+    });
+
+    $submitButton.addEventListener("mouseleave", () => {
+        // Reset to default styling
+        $submitButton.style.borderColor = "#e0e0e0";
+        $submitButton.style.borderWidth = "2px";
+        $submitButton.style.borderStyle = "solid";
+        $submitButton.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.1)";
+        $submitButton.style.transform = "translateY(-2px)";
+    });
+}
+
 $nameInput.addEventListener("blur", validateName);
 $numberInput.addEventListener("blur", validateNumber);
 $emailInput.addEventListener("blur", validateEmail);
