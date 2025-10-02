@@ -14,6 +14,7 @@ const $textError = document.getElementById("message-error");
 
 
 function validateName() {
+
     const name = $nameInput.value.trim();
     const nameRegex = /^[a-zA-ZÅÄÖåäö\s'-]+$/;
     
