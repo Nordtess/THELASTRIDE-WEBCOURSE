@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Corporate Breach Suite",
+    "customer": "Fortune 500 Client",
+    "description": "A ransomware campaign delivered with style and a custom-branded PDF invoice."
+  },
+  {
+    "title": "Midnight Phishing",
+    "customer": "Confused CEO",
+    "description": "An elegant phishing series, almost poetic, crafted to bypass every spam filter."
+  },
+  {
+    "title": "Darknet Dashboard",
+    "customer": "Nation-State Partner",
+    "description": "A real-time data relocation system that moves secrets where they fetch the best price."
+  },
+  {
+    "title": "Cookie Tracker 3000",
+    "customer": "Advertising Conglomerate",
+    "description": "An efficient way to ensure no browser cookie goes unharvested."
+  },
+  {
+    "title": "Zero-Day Express",
+    "customer": "Private Collector",
+    "description": "Weekly shipments of freshly exploited zero-days, discreetly packaged."
+  }
+]

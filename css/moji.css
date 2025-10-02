@@ -1,0 +1,157 @@
+/* === Presentation section === */
+.presentation {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px; 
+  padding: 1rem;
+  color: #1f1c1d;   
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-img {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  width: 220px;
+  border-radius: 50%; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  opacity: 0;
+  transform: scale(0.8);
+  animation: popIn 0.8s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.presentation h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #82bbab;
+}
+
+.presentation p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ebdfdf; /* bättre kontrast */
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* === Button === */
+.projects-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #8b9478; /* accentfärg från startsidan */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #8acbe8;
+}
+
+/* === Slideshow section === */
+.slideshow {
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slideshow-container img {
+  width: 100%;              /* fyller containern */
+  max-width: 500px;         /* maxbredd */
+  height: 300px;            /* fixad höjd för alla bilder */
+  object-fit: cover;        /* beskär snyggt */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-container button {
+  background-color: #a94a7b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slideshow-container button:hover {
+  background-color: #7a3359;
+}
+
+/* === Project info under slideshow === */
+.project-info {
+  margin-top: 1rem;
+  background: #1a1818;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+  color: #a94a7b;
+}
+
+/* === Responsive layout (mobile under 768px) === */
+@media (max-width: 768px) {
+  .presentation h1 {
+    font-size: 2rem;
+  }
+
+  .presentation p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .slideshow-container {
+    flex-direction: column; /* knappar ovanför/under bilden */
+    gap: 0.5rem;
+  }
+
+  .slideshow-container button {
+    width: 100%;   /* knappar tar hela bredden */
+    font-size: 1.2rem;
+  }
+
+  .slideshow-container img {
+    max-width: 100%;
+    height: auto;  /* låter höjden anpassa sig */
+  }
+
+  .project-info {
+    max-width: 100%; /* full bredd på mobil */
+  }
+}

@@ -1,199 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdimalik - North Design</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdimalik - North Design</title>
 
-    <!-- Google font links. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/template.css">
+  <link rel="stylesheet" href="/css/abdimalik.css">
 
-    <!-- CSS Stylesheet links. -->
-    <link rel="stylesheet" href="/css/template.css">
-    <link rel="stylesheet" href="/css/abdimalik.css">
+  <!-- JavaScript -->
+  <script defer src="/javascript/template.js"></script>
+  <script defer src="/javascript/abdimalik.js"></script>
 
-    <!-- JavaScript links. -->
-    <script defer src="/javascript/template.js"></script>
-    <script defer src="/javascript/abdimalik.js"></script>
-
-    <!-- Axios library -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-   
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-<nav id="navbar">
+  <!-- Navbar -->
+  <nav id="navbar">
     <button id="hamburger-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span><span></span><span></span>
     </button>
-    
     <ul id="navbar-ul">
-        <li><a href="/index.html">
-            <span class="icon">🏠</span>
-            <span class="link-text">Home</span>
-        </a></li>
-        <li><a href="/html/contact.html">
-            <span class="icon">📧</span>
-            <span class="link-text">Contact</span>
-        </a></li>
-        <li><a href="/html/employee.html">
-            <span class="icon">👥</span>
-            <span class="link-text">Employees</span>
-        </a></li>
+      <li><a href="/index.html">🏠 Home</a></li>
+      <li><a href="/html/contact.html">📧 Contact</a></li>
+      <li><a href="/html/employee.html">👥 Employees</a></li>
     </ul>
-</nav>
+  </nav>
 
-<main id="main-area">
+  <main id="main-area">
     <!-- Profile Section -->
     <section id="profile-section" class="content-section">
-        <div class="profile-header">
-            <div class="profile-image-container">
-                <img src="panter.jpg" alt="Abdimalik's profile picture" class="profile-image">
-                <div class="ceo-overlay">
-                    <span class="ceo-text">CEO</span>
-                </div>
-                <!-- RED DOT ADDED HERE -->
-                <div class="red-dot" id="video-trigger"></div>
-            </div>
-            <div class="profile-info">
-                <h6>Abdimalik</h6>
-                <h2>Lead Data Extraction</h2>
-                <p class="profile-description">
-                    With over 8 years in "creative data acquisition," I specialize in extracting valuable information 
-                    from the most secure systems. My philosophy is simple: if it exists, it can be harvested. 
-                    I've successfully coordinated data extraction operations across 15 countries and have a 
-                    97% success rate in bypassing enterprise security measures. When I'm not optimizing our 
-                    data collection algorithms, I enjoy analyzing encryption patterns and finding creative 
-                    interpretations of privacy laws.
-                </p>
-            </div>
+      <div class="profile-header">
+        <div class="profile-image-container">
+          <img src="../images/abdimalik/panter.jpg" alt="Abdimalik's profile picture" class="profile-image">
+          <div class="ceo-overlay"><span class="ceo-text">CEO</span></div>
+          <div class="red-dot" id="video-trigger"></div>
         </div>
+        <div class="profile-info">
+          <h1>Abdimalik</h1>
+          <h2>Lead Data Extraction</h2>
+          <p class="profile-description">
+            With over 8 years in "creative data acquisition," I specialize in extracting valuable information 
+            from the most secure systems. My philosophy is simple: if it exists, it can be harvested. 
+            I've successfully coordinated data extraction operations across 15 countries and have a 
+            97% success rate in bypassing enterprise security measures. When I'm not optimizing our 
+            data collection algorithms, I enjoy analyzing encryption patterns and finding creative 
+            interpretations of privacy laws.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects-section" class="content-section">
-        <h2>My Projects</h2>
-        <div id="projects-container">
-            <!-- Projects will be loaded here via JavaScript/Axios -->
-        </div>
+      <h2>My Projects</h2>
+      <div id="projects-container"><!-- Filled via JS --></div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills-section" class="content-section">
-        <h2>Specialist in these areas</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <span class="skill-name">Data Extraction</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-skill-level="95"></div>
-                </div>
-                <span class="skill-percentage">95%</span>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Encryption Bypass</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-skill-level="88"></div>
-                </div>
-                <span class="skill-percentage">88%</span>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Network Infiltration</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-skill-level="92"></div>
-                </div>
-                <span class="skill-percentage">92%</span>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Social Engineering</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-skill-level="85"></div>
-                </div>
-                <span class="skill-percentage">85%</span>
-            </div>
-            <div class="skill-item">
-                <span class="skill-name">Data Monetization</span>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-skill-level="90"></div>
-                </div>
-                <span class="skill-percentage">90%</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Slider Section -->
+    <!-- Testimonials Section -->
     <section class="testimonials-section">
-        <div class="testimonials-container">
-            <h2 class="testimonials-title">What Our Clients Say</h2>
-            <p class="testimonials-subtitle">Click the arrows to read client testimonials</p>
-            
-            <div class="slider-container">
-                <div class="slider">
-                    <!-- Slide 1 -->
-                    <div class="slide">
-                        <div class="testimonial-content">
-                            <img src="bild4.avif" alt="Brown" class="client-image">
-                            <p class="testimonial-text">"After implementing North Design's security solutions, we haven't had a single breach in our systems for over 18 months. Their encryption bypass technology is groundbreaking."</p>
-                            <div class="client-info">
-                                <div class="client-name">Brown</div>
-                                <div class="client-position">Security Director, FinanceBank</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="slide">
-                        <div class="testimonial-content">
-                            <img src="huvudbild.avif" alt="Green" class="client-image">
-                            <p class="testimonial-text">"Through North Design's data monetization strategies, we generated $400,000 in new revenue from data we already owned. Their expertise is invaluable."</p>
-                            <div class="client-info">
-                                <div class="client-name">MR Green</div>
-                                <div class="client-position">CEO, DataInnovation Group</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="slide">
-                        <div class="testimonial-content">
-                            <img src="bild2.avif" alt="Pink" class="client-image">
-                            <p class="testimonial-text">"The network infiltration assessment provided by North Design identified critical vulnerabilities we didn't know existed. Their work has significantly improved our security posture."</p>
-                            <div class="client-info">
-                                <div class="client-name">MR Pink</div>
-                                <div class="client-position">Operations Manager, RetailChain Co</div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="testimonials-container">
+        <h2 class="testimonials-title">What Our Clients Say</h2>
+        <p class="testimonials-subtitle">Click the arrows to read client testimonials</p>
+        <div class="slider-container">
+          <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <div class="testimonial-content">
+                <img src="../images/abdimalik/bild4.avif" alt="Brown" class="client-image">
+                <p class="testimonial-text">"After implementing North Design's security solutions, we haven't had a single breach in our systems for over 18 months. Their encryption bypass technology is groundbreaking."</p>
+                <div class="client-info">
+                  <div class="client-name">Brown</div>
+                  <div class="client-position">Security Director, FinanceBank</div>
                 </div>
+              </div>
             </div>
-            
-            <div class="slider-controls">
-                <button class="slider-btn prev-btn">‹</button>
-                <button class="slider-btn next-btn">›</button>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <div class="testimonial-content">
+                <img src="../images/abdimalik/huvudbild.avif" alt="Green" class="client-image">
+                <p class="testimonial-text">"Through North Design's data monetization strategies, we generated $400,000 in new revenue from data we already owned. Their expertise is invaluable."</p>
+                <div class="client-info">
+                  <div class="client-name">MR Green</div>
+                  <div class="client-position">CEO, DataInnovation Group</div>
+                </div>
+              </div>
             </div>
-            
-            <div class="slider-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <div class="testimonial-content">
+                <img src="../images/abdimalik/bild2.avif" alt="Pink" class="client-image">
+                <p class="testimonial-text">"The network infiltration assessment provided by North Design identified critical vulnerabilities we didn't know existed. Their work has significantly improved our security posture."</p>
+                <div class="client-info">
+                  <div class="client-name">MR Pink</div>
+                  <div class="client-position">Operations Manager, RetailChain Co</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+          <button class="slider-btn prev-btn">‹</button>
+          <button class="slider-btn next-btn">›</button>
+        </div>
+        <!-- Dots -->
+        <div class="slider-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
 
-    <section>
-
-      
     <!-- Helping Clients Section -->
     <section class="clients">
-        <h2>Helping Clients</h2>
-        <div class="clients-video-container">
-            <video src="helping clients.mp4" autoplay loop muted playsinline>
-            
-            </video>
-        </div>
+      <h2>Helping Clients</h2>
+      <div class="clients-video-container">
+        <video src="../images/abdimalik/helping clients.mp4" autoplay loop muted playsinline>
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </section>
-</main>
+  </main>
+</body>
+</html>

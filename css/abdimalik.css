@@ -1,399 +1,335 @@
-/* Abdimalik Individual Page Styles */
 
+/* === Content Sections === */
 .content-section {
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Profile Section */
+/* === Profile Section === */
 .profile-header {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stacka på mobil */
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-image-container {
+  position: relative;
+  display: inline-block;
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--accent-color);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid var(--accent-color);
 }
 
 .profile-info h1 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
 }
 
 .profile-info h2 {
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .profile-description {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  text-align: center;
 }
 
-/* Skills Section (VG) */
-.skills-container {
-    max-width: 600px;
-    margin: 0 auto;
+/* CEO Overlay */
+.ceo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.skill-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
+.profile-image-container:hover .ceo-overlay {
+  opacity: 1;
 }
 
-.skill-name {
-    min-width: 150px;
-    font-weight: 500;
-    color: var(--text-color);
+.ceo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.skill-bar {
-    flex: 1;
-    height: 20px;
-    background: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+/* Red Dot with Animation */
+.red-dot {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  animation: pulse 2s infinite;
 }
 
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    border-radius: 10px;
-    width: 0%;
-    transition: width 2s ease-in-out;
+.red-dot:hover {
+  transform: scale(1.2);
 }
 
-        /* Additional styling for the employee section */
-        .other-employees-section {
-            padding: 2rem;
-            background-color: #070707;
-            margin-top: 2rem;
-            border-radius: 5px;
-            border-radius: 70%;
-            
-        }
-        
-        .other-employees-section h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            border-radius: 50%;
-             border-radius: 50%;
-          
-          
-        }
-        
-        .employees-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 15fr));
-            gap: 1.5rem;
-            justify-items: right;
-        }
-        
-        .employee-card {
-            text-align: center;
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-             border-radius: 50%;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-            animation: pulse 2000ms infinite;
-        }
-        
-        .employee-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .employee-image {
-            width: 100px;
-            height: 50;
-            border-radius: 100%;
-            object-fit: contain;
-            margin-bottom: 0.5rem;
-            border: 3px solid #787878;
-        }
-        
-        .employee-name {
-            font-weight: bold;
-            color: #000000;
-        }
-        
-        /* Placeholder styling for images that aren't loaded */
-        .employee-image:not([src]),
-        .employee-image[src=""] {
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 0.8rem;
-        }
-        
-        /* STYLES FOR IMAGE AND CEO OVERLAY */
-        .profile-header {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .profile-image-container {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .ceo-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .profile-image-container:hover .ceo-overlay {
-            opacity: 1;
-        }
-        
-        .ceo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        /* NEW STYLES FOR RED DOT AND VIDEO */
-        .red-dot {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            width: 25px;
-            height: 25px;
-            background-color: #ff0000;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-            animation: pulse 2s infinite;
-        }
-        
-        .red-dot:hover {
-            transform: scale(1.2);
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-        }
-     .clients {
-            padding: 3rem 2rem;
-            background-color: #000000;
-            margin-top: 2rem;
-            border-radius: 1px;
-        }
-        
-        .clients h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #ffffff;
-            font-size: 2rem;
-        }
-        
-        .clients-video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgb(0, 0, 0);
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .clients-video-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            display: block;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-            animation: pulse 2000ms infinite;
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+}
 
-        }
-     .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            text-align: center;
-        }
-        
-        .testimonials-title {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .testimonials-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .slider-container {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .slide {
-            min-width: 100%;
-            padding: 3rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .testimonial-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            max-width: 700px;
-        }
-        
-        .client-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            font-style: italic;
-            max-width: 600px;
-        }
-        
-        .client-info {
-            margin-top: 1rem;
-        }
-        
-        .client-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-        
-        .client-position {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .slider-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .slider-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.7rem;
-            margin-top: 1.5rem;
-        }
-        
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-        
-        @media (max-width: 768px) {
-            .testimonials-title {
-                font-size: 2rem;
-            }
-            
-            .slide {
-                padding: 2rem 1.5rem;
-            }
-            
-            .testimonial-text {
-                font-size: 1rem;
-            }
-        }
+/* === Clients Section (Video) === */
+.clients {
+  padding: 3rem 2rem;
+  background-color: #000000;
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+
+.clients h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.clients-video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #000;
+}
+
+.clients-video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  animation: pulse 2000ms infinite;
+}
+
+/* === Testimonials Section === */
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.testimonials-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.testimonials-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.client-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  max-width: 600px;
+}
+
+.client-info {
+  margin-top: 1rem;
+}
+
+.client-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.client-position {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.slider-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* === Projects Section === */
+#projects-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#projects-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #b4abaf;
+}
+
+#projects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.project-item {
+  background: #1a1818;
+  color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.project-item h3 {
+  color: #82bbab;
+  margin-bottom: 0.5rem;
+}
+
+.project-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsivitet för mobil */
+@media (max-width: 768px) {
+  .testimonials-title {
+    font-size: 2rem;
+  }
+
+  .slide {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  #projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item {
+    text-align: center;
+  }
+}

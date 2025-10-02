@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moji – Projects</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/template.css">
+  <link rel="stylesheet" href="/css/moji.css">
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="../javascript/moji-projects.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <button id="hamburger-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="navbar-ul">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/html/contact.html">Contact</a></li>
+      <li><a href="/html/employee.html">Employees</a></li>
+      <li><a href="/html/moji.html">Back to Moji</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-area">
+
+    <!-- Extra presentation -->
+    <section class="presentation">
+      <img src="../images/moji-projects.png" alt="Moji – Head of Strategic Exploitation" class="profile-img">
+      <h1>Moji's Projects</h1>
+      <p>Here you can explore some of Moji’s most notorious operations, harvested with precision and style.</p>
+    </section>
+
+    <!-- Slideshow with project info -->
+    <section class="slideshow">
+      <h2>My Projects</h2>
+      <div class="slideshow-container">
+        <button id="prev-btn">⟨</button>
+        
+        <div class="slide-content">
+          <img id="slideshow-image" src="../images/faktura.png" alt="Moji project image">
+          <div class="project-info">
+            <h3 id="project-title">Project Title</h3>
+            <p><strong>Client:</strong> <span id="project-client"></span></p>
+            <p id="project-description"></p>
+          </div>
+        </div>
+        
+        <button id="next-btn">⟩</button>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
