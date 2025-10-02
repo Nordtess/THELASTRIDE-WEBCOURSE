@@ -81,6 +81,11 @@ function validateMessage() {
 }
 
 
+// Mobile detection function
+function isMobile() {
+    return window.innerWidth <= 800;
+}
+
 // Check if all fields are valid for dynamic button styling
 function areAllFieldsValid() {
     const name = $nameInput.value.trim();
@@ -96,12 +101,43 @@ function areAllFieldsValid() {
     return validateName() && validateNumber() && validateEmail() && validateMessage();
 }
 
+// Update mobile button styling based on validation
+function updateMobileButtonStyle() {
+    if (!isMobile() || !$submitButton) return;
+    
+    const hasAnyContent = $nameInput.value.trim() || $numberInput.value.trim() || 
+                          $emailInput.value.trim() || $textAreaInput.value.trim();
+    
+    if (!hasAnyContent) {
+        // Default state - no content yet
+        $submitButton.style.borderColor = "#e0e0e0";
+        $submitButton.style.borderWidth = "2px";
+        $submitButton.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.1)";
+    } else if (areAllFieldsValid()) {
+        // Green border - all valid
+        $submitButton.style.borderColor = "#00ff00";
+        $submitButton.style.borderWidth = "4px";
+        $submitButton.style.boxShadow = "0 0 15px rgba(0, 255, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)";
+    } else {
+        // Red border - has content but not all valid
+        $submitButton.style.borderColor = "#ff0000";
+        $submitButton.style.borderWidth = "4px";
+        $submitButton.style.boxShadow = "0 0 15px rgba(255, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)";
+    }
+}
+
 // Get submit button for hover effects
 const $submitButton = document.querySelector("#form-field button");
 
-// Add dynamic hover effects to submit button
+// Add dynamic effects to submit button
 if ($submitButton) {
+    // Desktop hover effects - ALWAYS add these event listeners
     $submitButton.addEventListener("mouseenter", () => {
+        // Skip hover effects on mobile, use static styling instead
+        if (isMobile()) {
+            return;
+        }
+        
         if (areAllFieldsValid()) {
             // Green border for valid form - MUCH MORE PROMINENT
             $submitButton.style.borderColor = "#00ff00";
@@ -120,6 +156,11 @@ if ($submitButton) {
     });
 
     $submitButton.addEventListener("mouseleave", () => {
+        // Skip hover effects on mobile, use static styling instead
+        if (isMobile()) {
+            return;
+        }
+        
         // Reset to default styling
         $submitButton.style.borderColor = "#e0e0e0";
         $submitButton.style.borderWidth = "2px";
@@ -127,12 +168,48 @@ if ($submitButton) {
         $submitButton.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.1)";
         $submitButton.style.transform = "translateY(-2px)";
     });
+    
+    // Initial styling based on device type
+    updateMobileButtonStyle();
 }
 
 $nameInput.addEventListener("blur", validateName);
 $numberInput.addEventListener("blur", validateNumber);
 $emailInput.addEventListener("blur", validateEmail);
 $textAreaInput.addEventListener("blur", validateMessage);
+
+// Function to clear thank you message when user starts typing
+function clearThankYouMessage() {
+    const $formSent = document.getElementById("form-sent");
+    if ($formSent && $formSent.textContent) {
+        $formSent.textContent = "";
+    }
+}
+
+// Add mobile real-time feedback on input + clear thank you message
+$nameInput.addEventListener("input", () => {
+    clearThankYouMessage();
+    updateMobileButtonStyle();
+});
+$numberInput.addEventListener("input", () => {
+    clearThankYouMessage();
+    updateMobileButtonStyle();
+});
+$emailInput.addEventListener("input", () => {
+    clearThankYouMessage();
+    updateMobileButtonStyle();
+});
+$textAreaInput.addEventListener("input", () => {
+    clearThankYouMessage();
+    updateMobileButtonStyle();
+});
+
+// Update on window resize in case user switches between mobile/desktop
+window.addEventListener("resize", () => {
+    if (isMobile()) {
+        updateMobileButtonStyle();
+    }
+});
 
 
 $form.addEventListener("submit", (event) => {

@@ -125,3 +125,30 @@
     min-height: 1.2em;
 }
 
+/* Disable button animations on mobile */
+@media (max-width: 800px) {
+    #form-field button {
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    #form-field button:hover {
+        transform: none !important;
+        background: linear-gradient(145deg, #ffffff, #f0f0f0) !important;
+        border-color: #e0e0e0 !important;
+        box-shadow: 
+            0 8px 16px rgba(0, 0, 0, 0.15),
+            0 4px 8px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    #form-field button:before {
+        display: none !important;
+    }
+    
+    #form-field button:hover:before {
+        display: none !important;
+    }
+}
+
