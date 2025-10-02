@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // Projects
-const list = document.getElementById('project-list');
-const filterInput = document.getElementById('filter');
-const sortAZ = document.getElementById('sort-az');
-const sortZA = document.getElementById('sort-za');
+  const list = document.getElementById('project-list');
+  const filterInput = document.getElementById('filter');
+  const sortAZ = document.getElementById('sort-az');
+  const sortZA = document.getElementById('sort-za');
 
-let projects = [];
+  let projects = [];
 
-if (list) {
-  axios.get('/data/projects-david.json').then(r => {
-    projects = r.data;
+  axios.get('/data/projects-david.json').then(response => {
+    projects = response.data;
     render(projects);
   });
 
@@ -33,11 +32,11 @@ if (list) {
   sortZA.addEventListener('click', () => {
     render([...projects].sort((a, b) => b.title.localeCompare(a.title)));
   });
-}
+
 
   // Gallery
-const gallery = document.getElementById('gallery');
-if (gallery) {
+  const gallery = document.getElementById('gallery');
+
   const images = gallery.dataset.images.split(',');
   let index = 0;
   const slide = document.getElementById('slide');
@@ -58,14 +57,11 @@ if (gallery) {
     showImage();
   };
 
-  showImage();
-}
+
 
 
   // Skills
-const skills = document.querySelectorAll('#skills .skill');
-
-if (skills.length) {
+  const skills = document.querySelectorAll('#skills .skill');
   function checkScroll() {
     skills.forEach(skill => {
       const rect = skill.getBoundingClientRect();
@@ -74,14 +70,11 @@ if (skills.length) {
       if (visible && !skill.classList.contains('done')) {
         const level = skill.dataset.level || '0';
         skill.querySelector('.fill').style.width = level + '%';
-        skill.classList.add('done'); 
+        skill.classList.add('done');
       }
     });
   }
 
   window.addEventListener('scroll', checkScroll);
-  checkScroll();
-}
-
 
 });
