@@ -70,15 +70,44 @@ document.addEventListener('DOMContentLoaded', function () {
         $clickMe.style.fontSize = "20px";
         $clickMe.style.whiteSpace = "nowrap";
         $clickMe.style.zIndex = "10";
+        $clickMe.style.transition = "all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+        $clickMe.style.opacity = "0";
+
+        // Animation functions
+        function showClickMe() {
+            $clickMe.style.display = "block";
+            // Start position (off-screen)
+            $clickMe.style.transform = "translateY(-50%) translateX(100px) scale(0.5)";
+            $clickMe.style.opacity = "0";
+            
+            // Trigger bounce-in animation
+            setTimeout(() => {
+                $clickMe.style.transform = "translateY(-50%) translateX(0) scale(1)";
+                $clickMe.style.opacity = "1";
+                
+                // Add pulsing effect after entrance
+                setTimeout(() => {
+                    $clickMe.style.animation = "clickMePulse 2s ease-in-out infinite";
+                }, 600);
+            }, 10);
+        }
+
+        function hideClickMe() {
+            // Stop pulsing animation and apply smooth exit animation
+            $clickMe.style.animation = "clickMeSlideOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards";
+            
+            setTimeout(() => {
+                $clickMe.style.display = "none";
+                // Reset for next entrance
+                $clickMe.style.animation = "";
+                $clickMe.style.transform = "translateY(-50%) translateX(0) scale(1)";
+                $clickMe.style.opacity = "1";
+            }, 500);
+        }
 
         if (!isMobile()) {
-            $clickMeImage.addEventListener("mouseenter", () => {
-                $clickMe.style.display = "block";
-            });
-
-            $clickMeImage.addEventListener("mouseleave", () => {
-                $clickMe.style.display = "none";
-            });
+            $clickMeImage.addEventListener("mouseenter", showClickMe);
+            $clickMeImage.addEventListener("mouseleave", hideClickMe);
         }
 
         window.addEventListener("resize", () => {
